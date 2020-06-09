@@ -8,9 +8,6 @@ def rock_paper_scissors(n):
     return [[]]
   else:
     return [p + r for p in plays for r in rock_paper_scissors(n-1)]
-  # Your code here
-
-  pass
 
 
 if __name__ == "__main__":

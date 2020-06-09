@@ -11,19 +11,16 @@ Returns: an integer
 #     else:
 #         return eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
 
-def eating_cookies(n, memo=[]):
-    memo.extend([0]*(n-len(memo)+1))
-    def eating_cookies_memoized(n):
-        if memo[n]:
-            return memo[n]
-        if n <= 1:
-            memo[n] = 1
-        elif n == 2:
-            memo[n] = 2
-        else:
-            memo[n] = eating_cookies_memoized(n-3) + eating_cookies_memoized(n-2) + eating_cookies_memoized(n-1)
-        return memo[n]
-    eating_cookies_memoized(n)
+def eating_cookies(n, memo=None):
+    if not memo:
+        memo = [0]*(n+1)
+
+    if n <= 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif not memo[n]:
+        memo[n] = eating_cookies(n-3, memo) + eating_cookies(n-2, memo) + eating_cookies(n-1, memo)
     return memo[n]
 
 if __name__ == "__main__":

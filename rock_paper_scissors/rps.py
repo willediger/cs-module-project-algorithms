@@ -6,8 +6,6 @@ def rock_paper_scissors(n):
   plays = [['rock'], ['paper'], ['scissors']]
   if n == 0:
     return [[]]
-  elif n == 1:
-    return plays
   else:
     return [p + r for p in plays for r in rock_paper_scissors(n-1)]
   # Your code here

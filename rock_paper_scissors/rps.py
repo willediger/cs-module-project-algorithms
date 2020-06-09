@@ -9,7 +9,7 @@ def rock_paper_scissors(n):
   elif n == 1:
     return [p for p in plays]
   else:
-    return [r + p for r in plays for p in rock_paper_scissors(n-1)]
+    return [p + r for p in plays for r in rock_paper_scissors(n-1)]
   # Your code here
 
   pass

@@ -21,6 +21,7 @@ def eating_cookies(n, memo=None):
         return 2
     elif not memo[n]:
         memo[n] = eating_cookies(n-3, memo) + eating_cookies(n-2, memo) + eating_cookies(n-1, memo)
+        
     return memo[n]
 
 if __name__ == "__main__":

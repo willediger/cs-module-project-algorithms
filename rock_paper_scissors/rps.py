@@ -3,9 +3,11 @@
 import sys
 
 def rock_paper_scissors(n):
-  # Your code here
-
-  pass
+  plays = [['rock'], ['paper'], ['scissors']]
+  if n == 0:
+    return [[]]
+  else:
+    return [p + r for p in plays for r in rock_paper_scissors(n-1)]
 
 
 if __name__ == "__main__":
